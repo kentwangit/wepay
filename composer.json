@@ -1,7 +1,7 @@
 {
   "type": "library",
-  "name": "zoujingli/wechat-developer",
-  "homepage": "https://github.com/zoujingli/WeChatDeveloper",
+  "name": "kentwangit/wepay",
+  "homepage": "https://github.com/kentwangit/wepay",
   "description": "WeChat platform and WeChat payment development tools",
   "license": "MIT",
   "authors": [
