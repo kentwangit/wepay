@@ -92,7 +92,11 @@ abstract class BasicWePay
         $this->config['mch_v3_key'] = $options['mch_v3_key'];
         $this->config['cert_public'] = $options['cert_public'];
         $this->config['cert_private'] = $options['cert_private'];
-        $this->config['cert_serial'] = openssl_x509_parse($this->config['cert_public'])['serialNumberHex'];
+        if(!empty($options['cert_serial'])){
+            $this->config['cert_serial'] = $options['cert_serial'];
+        }else{
+            $this->config['cert_serial'] = openssl_x509_parse($this->config['cert_public'])['serialNumberHex'];
+        }
 
         if (empty($this->config['cert_serial'])) {
             throw new InvalidArgumentException("Failed to parse certificate public key");
